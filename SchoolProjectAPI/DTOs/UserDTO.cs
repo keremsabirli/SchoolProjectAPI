@@ -1,8 +1,10 @@
 ﻿using SchoolProjectAPI.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace SchoolProjectDTOs_
+namespace SchoolProjectAPI.DTOs
 {
     public class LiteUserDTO : SharedEntitiesDTO
     {

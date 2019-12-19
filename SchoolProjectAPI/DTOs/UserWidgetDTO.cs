@@ -1,21 +1,22 @@
 ﻿using SchoolProjectAPI.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace SchoolProjectDTOs_
+namespace SchoolProjectAPI.DTOs
 {
-    class LiteUserWidgetDTO : SharedEntitiesDTO
+    public class LiteUserWidgetDTO : SharedEntitiesDTO
     {
         public long UserId { get; set; }
         public long WidgetId { get; set; }
     }
-    class UserWidgetDTO : LiteUserWidgetDTO
+    public class UserWidgetDTO : LiteUserWidgetDTO
     {
         public virtual User User { get; set; }
         public virtual Widget Widget { get; set; }
     }
-    class DetailedUserWidgetDTO : UserWidgetDTO
+    public class DetailedUserWidgetDTO : UserWidgetDTO
     {
 
     }
