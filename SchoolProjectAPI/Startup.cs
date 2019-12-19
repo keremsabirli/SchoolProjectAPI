@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,6 +13,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SchoolProjectAPI.Models;
+using SchoolProjectAPI.Profiles;
+using SchoolProjectAPI.Wrappers;
+using SchoolProjectAPI.Wrappers.IWrappers;
 
 namespace SchoolProjectAPI
 {
@@ -29,6 +33,13 @@ namespace SchoolProjectAPI
         {
             services.AddDbContext<SchoolProjectContext>(opts => opts.UseSqlServer(Configuration["ConnectionString:SchoolProjectDB"]));
             services.AddControllers();
+            var config = new AutoMapper.MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(new MapperProfile());
+            });
+            var mapper = config.CreateMapper();
+            services.AddSingleton(mapper);
+            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

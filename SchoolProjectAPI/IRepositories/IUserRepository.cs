@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchoolProjectAPI.IRepositories
 {
-    interface IUserRepository : IRepository<User>
+    public interface IUserRepository : IRepository<User>
     {
     }
 }
