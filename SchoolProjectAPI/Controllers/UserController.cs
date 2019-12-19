@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SchoolProjectAPI.DTOs;
 using SchoolProjectAPI.Models;
 using SchoolProjectAPI.Wrappers.IWrappers;
+using System.Collections.Generic;
 
 namespace SchoolProjectAPI.Controllers
 {
@@ -27,7 +23,7 @@ namespace SchoolProjectAPI.Controllers
         {
             return Ok(mapper.Map<IEnumerable<UserDTO>>(repoWrapper.User.Get()));
         }
-        [HttpGet("{id}", Name ="GetUserById")]
+        [HttpGet("{id}", Name = "GetUserById")]
         public ActionResult<UserDTO> Get(long id)
         {
             return Ok(mapper.Map<UserDTO>(repoWrapper.User.Get(id)));

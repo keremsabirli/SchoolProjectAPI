@@ -3,9 +3,6 @@ using SchoolProjectAPI.Models;
 using SchoolProjectAPI.Repositories;
 using SchoolProjectAPI.Wrappers.IWrappers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SchoolProjectAPI.Wrappers
 {
