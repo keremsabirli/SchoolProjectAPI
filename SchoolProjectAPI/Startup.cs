@@ -45,7 +45,7 @@ namespace SchoolProjectAPI
             }
 
             app.UseHttpsRedirection();
-
+            app.UseDeveloperExceptionPage();
             app.UseRouting();
             app.UseAuthorization();
             app.UseMvc(routes =>
