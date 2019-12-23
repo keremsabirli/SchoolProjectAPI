@@ -1,14 +1,14 @@
 ﻿namespace SchoolProjectAPI.DTOs
 {
-    class LiteWidgetDTO : SharedEntitiesDTO
+    public class LiteWidgetDTO : SharedEntitiesDTO
     {
         public string Title { get; set; }
     }
-    class WidgetDTO : LiteWidgetDTO
+    public class WidgetDTO : LiteWidgetDTO
     {
 
     }
-    class DetailedWidgetDTO : WidgetDTO
+    public class DetailedWidgetDTO : WidgetDTO
     {
 
     }
