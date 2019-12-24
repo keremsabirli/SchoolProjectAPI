@@ -24,7 +24,7 @@ namespace SchoolProjectAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<SchoolProjectContext>(opts => opts.UseSqlServer(Configuration["ConnectionString:prodSchoolProjectDB"]));
+            services.AddDbContext<SchoolProjectContext>(opts => opts.UseSqlServer(Configuration["ConnectionString:prodSchoolProjectDB"]).UseLazyLoadingProxies());
             services.AddControllers();
             var config = new MapperConfiguration(cfg =>
             {

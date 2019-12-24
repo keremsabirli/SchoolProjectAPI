@@ -7,7 +7,6 @@ namespace SchoolProjectAPI.Models
         public SchoolProjectContext(DbContextOptions options)
             : base(options)
         {
-
         }
         public DbSet<Widget> Widgets { get; set; }
         public DbSet<User> Users { get; set; }
