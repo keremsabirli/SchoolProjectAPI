@@ -4,6 +4,7 @@ using SchoolProjectAPI.DTOs;
 using SchoolProjectAPI.Models;
 using SchoolProjectAPI.Wrappers.IWrappers;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SchoolProjectAPI.Controllers
 {
@@ -21,7 +22,7 @@ namespace SchoolProjectAPI.Controllers
         [HttpGet]
         public ActionResult<List<UserDTO>> Get()
         {
-            return Ok(mapper.Map<IEnumerable<UserDTO>>(repoWrapper.User.Get()));
+            return Ok(mapper.Map<IEnumerable<UserDTO>>(repoWrapper.User.Get()).ToList());
         }
         [HttpGet("{id}", Name = "GetUserById")]
         public ActionResult<UserDTO> Get(long id)
