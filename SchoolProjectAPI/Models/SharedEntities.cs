@@ -8,6 +8,6 @@ namespace SchoolProjectAPI.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
-        public bool IsDeleted { get; set; }
+        public bool? IsDeleted { get; set; } = false;
     }
 }

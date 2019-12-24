@@ -12,5 +12,6 @@ namespace SchoolProjectAPI.Models
         public DbSet<Widget> Widgets { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserWidget> UserWidgets { get; set; }
+        public DbSet<PersonWidget> PersonWidgets { get; set; }
     }
 }
