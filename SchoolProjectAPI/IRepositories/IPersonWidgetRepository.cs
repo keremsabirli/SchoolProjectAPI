@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchoolProjectAPI.IRepositories
 {
-    interface IPersonWidgetRepository : IRepository<PersonWidget>
+    public interface IPersonWidgetRepository : IRepository<PersonWidget>
     {
     }
 }

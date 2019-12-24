@@ -16,17 +16,20 @@ namespace SchoolProjectAPI.Wrappers
             user = new Lazy<IUserRepository>(() => new UserRepository(schoolProjectContext));
             widget = new Lazy<IWidgetRepository>(() => new WidgetRepository(schoolProjectContext));
             userwidget = new Lazy<IUserWidgetRepository>(() => new UserWidgetRepository(schoolProjectContext));
+            personwidget = new Lazy<IPersonWidgetRepository>(() => new PersonWidgetRepository(schoolProjectContext));
         }
 
         //Fields
         private Lazy<IUserRepository> user;
         private Lazy<IWidgetRepository> widget;
         private Lazy<IUserWidgetRepository> userwidget;
+        private Lazy<IPersonWidgetRepository> personwidget;
 
         //Props
         public IUserRepository User => user.Value;
         public IWidgetRepository Widget => widget.Value;
         public IUserWidgetRepository UserWidget => userwidget.Value;
+        public IPersonWidgetRepository PersonWidget => personwidget.Value;
 
         //Save
         public void Save()
