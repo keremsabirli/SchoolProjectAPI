@@ -9,6 +9,6 @@ namespace SchoolProjectAPI.Models
             MinimumLength = 1,
             ErrorMessage = "Title must have minimum length of 1 and maximum length of 80")]
         public string Title { get; set; }
-        public List<UserWidget> UserWidgets { get; set; }
+        public virtual List<UserWidget> UserWidgets { get; set; }
     }
 }
