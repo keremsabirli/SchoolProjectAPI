@@ -16,8 +16,12 @@ namespace SchoolProjectAPI.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<PersonWidget>().HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserId);
-            modelBuilder.Entity<UserWidget>(b => {
+            modelBuilder.Entity<PersonWidget>(b =>
+            {
+                b.HasOne(x => x.User).WithMany(x => x.PersonWidgets).HasForeignKey(x => x.UserId);
+            });
+            modelBuilder.Entity<UserWidget>(b =>
+            {
                 b.HasOne(x => x.User).WithMany(x => x.UserWidgets).HasForeignKey(x => x.UserId);
                 b.HasOne(x => x.Widget).WithMany(x => x.UserWidgets).HasForeignKey(x => x.WidgetId);
             });

@@ -12,7 +12,6 @@ namespace SchoolProjectAPI.Models
         public string PhoneNumber { get; set; }
         public string Gender { get; set; }
         public long UserId { get; set; }
-        [ForeignKey("UserId")]
         public virtual User User { get; set; }
     }
 }
