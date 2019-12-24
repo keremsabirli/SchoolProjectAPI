@@ -13,5 +13,15 @@ namespace SchoolProjectAPI.Models
         public DbSet<User> Users { get; set; }
         public DbSet<UserWidget> UserWidgets { get; set; }
         public DbSet<PersonWidget> PersonWidgets { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<PersonWidget>().HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserId);
+            modelBuilder.Entity<UserWidget>(b => {
+                b.HasOne(x => x.User).WithMany(x => x.UserWidgets).HasForeignKey(x => x.UserId);
+                b.HasOne(x => x.Widget).WithMany(x => x.UserWidgets).HasForeignKey(x => x.WidgetId);
+            });
+        }
     }
 }
