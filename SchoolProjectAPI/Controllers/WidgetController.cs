@@ -33,7 +33,7 @@ namespace SchoolProjectAPI.Controllers
             return Ok(mapper.Map<WidgetDTO>(repoWrapper.Widget.Get(id)));
         }
         [HttpPost]
-        public ActionResult Post([FromBody]WidgetDTO value)
+        public ActionResult Post([FromBody] LiteWidgetDTO value)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             if (value == null) return BadRequest();
@@ -42,7 +42,7 @@ namespace SchoolProjectAPI.Controllers
             return Ok();
         }
         [HttpPut("{id}")]
-        public ActionResult Put(long id, [FromBody] WidgetDTO value)
+        public ActionResult Put(long id, [FromBody] LiteWidgetDTO value)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             if (id != value.Id) return BadRequest("Value with the given id doesn't exist.");

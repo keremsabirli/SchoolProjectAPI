@@ -30,7 +30,7 @@ namespace SchoolProjectAPI.Controllers
             return Ok(mapper.Map<UserDTO>(repoWrapper.User.Get(id)));
         }
         [HttpPost]
-        public ActionResult Post([FromBody]UserDTO value)
+        public ActionResult Post([FromBody] LiteUserDTO value)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             if (value == null) return BadRequest();
@@ -39,7 +39,7 @@ namespace SchoolProjectAPI.Controllers
             return Ok();
         }
         [HttpPut("{id}")]
-        public ActionResult Put(long id, [FromBody] UserDTO value)
+        public ActionResult Put(long id, [FromBody] LiteUserDTO value)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             if (id != value.Id) return BadRequest("Value with the given id doesn't exist.");
