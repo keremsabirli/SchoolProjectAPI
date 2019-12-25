@@ -48,6 +48,16 @@ namespace SchoolProjectAPI.Profiles
             CreateMap<PersonWidget, PersonWidgetDTO>().ReverseMap();
             //Detailed
             CreateMap<PersonWidget, DetailedPersonWidgetDTO>().ReverseMap();
+
+            ///
+            //PersonWidget
+            ///
+            //Lite
+            CreateMap<TextWidget, LiteTextWidgetDTO>().ReverseMap();
+            //Standard
+            CreateMap<TextWidget, TextWidgetDTO>().ReverseMap();
+            //Detailed
+            CreateMap<TextWidget, DetailedTextWidgetDTO>().ReverseMap();
         }
     }
 }
