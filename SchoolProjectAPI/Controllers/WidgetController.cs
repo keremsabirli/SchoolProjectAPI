@@ -23,9 +23,9 @@ namespace SchoolProjectAPI.Controllers
             this.mapper = mapper;
         }
         [HttpGet]
-        public ActionResult<List<WidgetDTO>> Get()
+        public ActionResult<List<LiteWidgetDTO>> Get()
         {
-            return Ok(mapper.Map<IEnumerable<WidgetDTO>>(repoWrapper.Widget.Get()).ToList());
+            return Ok(mapper.Map<IEnumerable<LiteWidgetDTO>>(repoWrapper.Widget.Get()).ToList());
         }
         [HttpGet("{id}", Name = "GetWidgetById")]
         public ActionResult<WidgetDTO> Get(long id)

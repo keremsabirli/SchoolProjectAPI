@@ -22,6 +22,11 @@ namespace SchoolProjectAPI.Controllers
             this.repoWrapper = repoWrapper;
             this.mapper = mapper;
         }
+        [HttpGet]
+        public ActionResult<List<LiteTextWidgetDTO>> Get()
+        {
+            return Ok(mapper.Map<IEnumerable<LiteTextWidgetDTO>>(repoWrapper.PersonWidget.Get()).ToList());
+        }
         [HttpGet("{id}", Name = "GetTextWidgetById")]
         public ActionResult<TextWidgetDTO> Get(long id)
         {
