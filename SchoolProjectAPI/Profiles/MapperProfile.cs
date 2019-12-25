@@ -15,9 +15,9 @@ namespace SchoolProjectAPI.Profiles
             //Lite
             CreateMap<User, LiteUserDTO>().ReverseMap();
             //Standard
-            CreateMap<User, UserDTO>().ReverseMap();
+            CreateMap<User, UserDTO>().IncludeBase<User, LiteUserDTO>().ReverseMap();
             //Detailed
-            CreateMap<User, DetailedUserDTO>().ReverseMap();
+            CreateMap<User, DetailedUserDTO>().IncludeBase<User, UserDTO>().ReverseMap();
 
             ///
             //Widget
@@ -25,9 +25,9 @@ namespace SchoolProjectAPI.Profiles
             //Lite
             CreateMap<Widget, LiteWidgetDTO>().ReverseMap();
             //Standard
-            CreateMap<Widget, WidgetDTO>().ReverseMap();
+            CreateMap<Widget, WidgetDTO>().IncludeBase<Widget, LiteWidgetDTO>().ReverseMap();
             //Detailed
-            CreateMap<Widget, DetailedWidgetDTO>().ReverseMap();
+            CreateMap<Widget, DetailedWidgetDTO>().IncludeBase<Widget, WidgetDTO>().ReverseMap();
 
             ///
             //UserWidget
@@ -35,9 +35,9 @@ namespace SchoolProjectAPI.Profiles
             //Lite
             CreateMap<UserWidget, LiteUserWidgetDTO>().ReverseMap();
             //Standard
-            CreateMap<UserWidget, UserWidgetDTO>().ReverseMap();
+            CreateMap<UserWidget, UserWidgetDTO>().IncludeBase<UserWidget, LiteUserWidgetDTO>().ReverseMap();
             //Detailed
-            CreateMap<UserWidget, DetailedUserWidgetDTO>().ReverseMap();
+            CreateMap<UserWidget, DetailedUserWidgetDTO>().IncludeBase<UserWidget, UserWidgetDTO>().ReverseMap();
 
             ///
             //PersonWidget
@@ -45,19 +45,19 @@ namespace SchoolProjectAPI.Profiles
             //Lite
             CreateMap<PersonWidget, LitePersonWidgetDTO>().ReverseMap();
             //Standard
-            CreateMap<PersonWidget, PersonWidgetDTO>().ReverseMap();
+            CreateMap<PersonWidget, PersonWidgetDTO>().IncludeBase<PersonWidget, LitePersonWidgetDTO>().ReverseMap();
             //Detailed
-            CreateMap<PersonWidget, DetailedPersonWidgetDTO>().ReverseMap();
+            CreateMap<PersonWidget, DetailedPersonWidgetDTO>().IncludeBase<PersonWidget, PersonWidgetDTO>().ReverseMap();
 
             ///
-            //PersonWidget
+            //TextWidget
             ///
             //Lite
             CreateMap<TextWidget, LiteTextWidgetDTO>().ReverseMap();
             //Standard
-            CreateMap<TextWidget, TextWidgetDTO>().ReverseMap();
+            CreateMap<TextWidget, TextWidgetDTO>().IncludeBase<TextWidget, LiteTextWidgetDTO>().ReverseMap();
             //Detailed
-            CreateMap<TextWidget, DetailedTextWidgetDTO>().ReverseMap();
+            CreateMap<TextWidget, DetailedTextWidgetDTO>().IncludeBase<TextWidget, TextWidgetDTO>().ReverseMap();
         }
     }
 }
