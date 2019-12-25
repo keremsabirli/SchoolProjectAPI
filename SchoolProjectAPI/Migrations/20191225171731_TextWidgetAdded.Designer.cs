@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SchoolProjectAPI.Models;
 
 namespace SchoolProjectAPI.Migrations
 {
     [DbContext(typeof(SchoolProjectContext))]
-    partial class SchoolProjectContextModelSnapshot : ModelSnapshot
+    [Migration("20191225171731_TextWidgetAdded")]
+    partial class TextWidgetAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -68,7 +70,7 @@ namespace SchoolProjectAPI.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TextWidgets");
+                    b.ToTable("TextWidget");
                 });
 
             modelBuilder.Entity("SchoolProjectAPI.Models.User", b =>

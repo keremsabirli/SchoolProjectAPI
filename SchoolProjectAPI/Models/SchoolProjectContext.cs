@@ -12,6 +12,7 @@ namespace SchoolProjectAPI.Models
         public DbSet<User> Users { get; set; }
         public DbSet<UserWidget> UserWidgets { get; set; }
         public DbSet<PersonWidget> PersonWidgets { get; set; }
+        public DbSet<TextWidget> TextWidgets { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
