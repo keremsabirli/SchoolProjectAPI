@@ -13,5 +13,6 @@ namespace SchoolProjectAPI.Models
         public DateTimeOffset BirthDate { get; set; }
         public virtual List<UserWidget> UserWidgets { get; set; }
         public virtual List<PersonWidget> PersonWidgets { get; set; }
+        public virtual List<TextWidget> TextWidgets { get; set; }
     }
 }

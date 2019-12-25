@@ -25,6 +25,10 @@ namespace SchoolProjectAPI.Models
                 b.HasOne(x => x.User).WithMany(x => x.UserWidgets).HasForeignKey(x => x.UserId);
                 b.HasOne(x => x.Widget).WithMany(x => x.UserWidgets).HasForeignKey(x => x.WidgetId);
             });
+            modelBuilder.Entity<TextWidget>(b =>
+            {
+                b.HasOne(x => x.User).WithMany(x => x.TextWidgets).HasForeignKey(x => x.UserId);
+            });
         }
     }
 }
