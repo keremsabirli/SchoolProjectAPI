@@ -13,6 +13,7 @@ namespace SchoolProjectAPI.Models
         public DbSet<UserWidget> UserWidgets { get; set; }
         public DbSet<PersonWidget> PersonWidgets { get; set; }
         public DbSet<TextWidget> TextWidgets { get; set; }
+        public DbSet<WeatherWidget> WeatherWidgets { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,6 +30,11 @@ namespace SchoolProjectAPI.Models
                 b.HasOne(x => x.Widget).WithMany(x => x.UserWidgets).HasForeignKey(x => x.WidgetId);
             });
             modelBuilder.Entity<TextWidget>(b =>
+            {
+                //b.HasOne(x => x.User).WithMany(x => x.TextWidgets).HasForeignKey(x => x.UserId);
+                b.HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserId);
+            });
+            modelBuilder.Entity<WeatherWidget>(b =>
             {
                 //b.HasOne(x => x.User).WithMany(x => x.TextWidgets).HasForeignKey(x => x.UserId);
                 b.HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserId);
