@@ -58,6 +58,15 @@ namespace SchoolProjectAPI.Profiles
             CreateMap<TextWidget, TextWidgetDTO>().IncludeBase<TextWidget, LiteTextWidgetDTO>().ReverseMap();
             //Detailed
             CreateMap<TextWidget, DetailedTextWidgetDTO>().IncludeBase<TextWidget, TextWidgetDTO>().ReverseMap();
+            ///
+            //WeatherWidget
+            ///
+            //Lite
+            CreateMap<WeatherWidget, LiteWeatherWidgetDTO>().ReverseMap();
+            //Standard
+            CreateMap<WeatherWidget, WeatherWidgetDTO>().IncludeBase<WeatherWidget, LiteWeatherWidgetDTO>().ReverseMap();
+            //Detailed
+            CreateMap<WeatherWidget, DetailedWeatherWidgetDTO>().IncludeBase<WeatherWidget, WeatherWidgetDTO>().ReverseMap();
         }
     }
 }

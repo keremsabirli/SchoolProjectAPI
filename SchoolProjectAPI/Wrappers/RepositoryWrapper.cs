@@ -18,6 +18,7 @@ namespace SchoolProjectAPI.Wrappers
             userwidget = new Lazy<IUserWidgetRepository>(() => new UserWidgetRepository(schoolProjectContext));
             personwidget = new Lazy<IPersonWidgetRepository>(() => new PersonWidgetRepository(schoolProjectContext));
             textwidget = new Lazy<ITextWidgetRepository>(() => new TextWidgetRepository(schoolProjectContext));
+            weatherwidget = new Lazy<IWeatherWidgetRepository>(() => new WeatherWidgetRepository(schoolProjectContext));
         }
 
         //Fields
@@ -26,6 +27,7 @@ namespace SchoolProjectAPI.Wrappers
         private Lazy<IUserWidgetRepository> userwidget;
         private Lazy<IPersonWidgetRepository> personwidget;
         private Lazy<ITextWidgetRepository> textwidget;
+        private Lazy<IWeatherWidgetRepository> weatherwidget;
 
         //Props
         public IUserRepository User => user.Value;
@@ -33,6 +35,7 @@ namespace SchoolProjectAPI.Wrappers
         public IUserWidgetRepository UserWidget => userwidget.Value;
         public IPersonWidgetRepository PersonWidget => personwidget.Value;
         public ITextWidgetRepository TextWidget => textwidget.Value;
+        public IWeatherWidgetRepository WeatherWidget => weatherwidget.Value;
 
         //Save
         public void Save()

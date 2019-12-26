@@ -9,6 +9,7 @@ namespace SchoolProjectAPI.Wrappers.IWrappers
         IUserWidgetRepository UserWidget { get; }
         IPersonWidgetRepository PersonWidget { get; }
         ITextWidgetRepository TextWidget { get; }
+        IWeatherWidgetRepository WeatherWidget { get; }
         public void Save();
     }
 }

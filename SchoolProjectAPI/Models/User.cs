@@ -11,8 +11,8 @@ namespace SchoolProjectAPI.Models
         [EmailAddress]
         public string MailAddress { get; set; }
         public DateTimeOffset BirthDate { get; set; }
-        public virtual List<UserWidget> UserWidgets { get; set; }
-        public virtual List<PersonWidget> PersonWidgets { get; set; }
-        public virtual List<TextWidget> TextWidgets { get; set; }
+        //public virtual List<UserWidget> UserWidgets { get; set; }
+        //public virtual List<PersonWidget> PersonWidgets { get; set; }
+        //public virtual List<TextWidget> TextWidgets { get; set; }
     }
 }

@@ -19,16 +19,19 @@ namespace SchoolProjectAPI.Models
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<PersonWidget>(b =>
             {
-                b.HasOne(x => x.User).WithMany(x => x.PersonWidgets).HasForeignKey(x => x.UserId);
+                //b.HasOne(x => x.User).WithMany(x => x.PersonWidgets).HasForeignKey(x => x.UserId);
+                b.HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserId);
             });
             modelBuilder.Entity<UserWidget>(b =>
             {
-                b.HasOne(x => x.User).WithMany(x => x.UserWidgets).HasForeignKey(x => x.UserId);
+                //b.HasOne(x => x.User).WithMany(x => x.UserWidgets).HasForeignKey(x => x.UserId);
+                b.HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserId);
                 b.HasOne(x => x.Widget).WithMany(x => x.UserWidgets).HasForeignKey(x => x.WidgetId);
             });
             modelBuilder.Entity<TextWidget>(b =>
             {
-                b.HasOne(x => x.User).WithMany(x => x.TextWidgets).HasForeignKey(x => x.UserId);
+                //b.HasOne(x => x.User).WithMany(x => x.TextWidgets).HasForeignKey(x => x.UserId);
+                b.HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserId);
             });
         }
     }
